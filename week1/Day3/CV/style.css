@@ -1,0 +1,149 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+
+#navi{
+    margin-top: 0px;
+    width: 100%;
+    height: 150px;
+    
+}
+ul,li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 70px;
+    justify-content: flex-end;
+    font-size: 25px;
+}
+#myname{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    margin-top: -75px;
+    margin-left: 5px;
+    font-size: 20px;
+}
+.prof{
+    position: relative;
+    margin:15% ;
+    margin-top:3%;
+    margin-left: 10%;
+    width: 1100px;
+    height: 650px;
+    
+    display: inline-block;
+    height: fit-content;
+}
+h4{
+    text-align: center;
+    font-size: 30px;
+}
+.im2{
+    margin-left: 5%;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%; /* Радиус скругления */
+    border: 10px solid whitesmoke; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+
+
+}
+body{
+    background-image: url(https://totalwallcovering.com/images/product/alexa-bdhl-l.jpg);
+    background-size: cover;
+}
+.divtxt{
+    position: absolute;
+    width: 40%;
+    left: 49%;
+    top: 35%;
+    font-size: 23px;
+}
+.item1{
+    grid-area: item1;
+}
+.item2{
+    grid-area: item2;
+
+}
+.item3{
+    grid-area: item3;
+}
+.item4{
+    grid-area: item4;
+}
+.container{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-areas:
+    'item1 item2'
+    'item3 item4';
+    gap: 20px;
+     
+
+}
+.item1,.item2{
+    outline: 10px solid whitesmoke;
+    width: 250px;
+    height: 150px;
+    padding: auto;
+    text-align: center;
+}
+a{
+    margin-left: 93.9%;
+}
+
+@media screen and (max-width: 800px){
+    #navi {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #navi * {
+        margin: 0;
+    }
+
+    ul {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    ul > li {
+        margin: 0;
+        display: block;
+    }
+    
+    .prof {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 4px;
+    }
+
+    .im2 {
+        width: 100px;
+        height: 100px;
+    }
+
+    .divtxt {
+        position: static;
+        width: 100%;
+    }
+    
+    h4 {
+        width: 100%;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
