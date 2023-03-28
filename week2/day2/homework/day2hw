@@ -66,16 +66,16 @@ while True:
 
     total = 0
 
-    for age in family_ages:
-        if age <= 3:
-            price = 0
-        elif age <= 12:
-            price = 10
-        else:
-            price = 15
-        total += price
+for age in family_ages:
+    if age <= 3:
+        price = 0
+    elif age <= 12:
+        price = 10
+    else:
+        price = 15
+    total += price
 
-        print('Total cost' + str(total))
+print('Total cost' + str(total))
 
 group = ['Zalipon', 'Kriril', 'Abdul', 'Nastya']
 allow_age = range(16, 22)
