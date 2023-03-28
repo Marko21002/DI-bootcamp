@@ -1,0 +1,109 @@
+# ExerciceXp
+# Ex1
+my_fav_numbers = {1, 2, 3, 4, 5}
+my_fav_numbers.add(6)
+my_fav_numbers.add(7)
+a_set_list = list(my_fav_numbers)
+a_set_list.pop()
+my_fav_numbers = set(a_set_list)
+
+print(my_fav_numbers)
+friend = {6, 8, 9}
+
+our_fav = my_fav_numbers.union(friend)
+print(our_fav)
+
+# Ex3
+basket = ["Banana", "Apples", "Oranges", "Blueberries"]
+basket.remove("Banana")
+basket.append('Kiwi')
+basket.insert(0, 'Apples')
+print(basket)
+x = basket.count("Apples")
+print(x)
+
+# Ex5
+for i in range(1, 21):
+    if i % 2 == 0:
+        print(i)
+# Ex6
+x = 'Marko'
+y = input()
+while y != x:
+    y = input('Whats ur name?')
+
+# Ex7
+fruits_s = input('enter few fruits ')
+fruits_list = fruits_s.split()
+chose = input()
+x = fruits_list.count(chose)
+if x > 0:
+    print('You have it')
+else:
+    print('You dont have it')
+# ex 8
+my_list = []
+
+while True:
+    user_input = input("add toping or type 'quit' to submit: ")
+    if user_input == "quit":
+        break
+    else:
+        print(user_input)
+        my_list.append(user_input)
+print(my_list)
+x = len(my_list)
+price = 10 + (x * 2.5)
+print(price)
+# ex9
+family_ages = []
+while True:
+    age_str = input("Enter age of family member or 'quit' if finished: ")
+    if age_str == "quit":
+        break
+    age = int(age_str)
+    family_ages.append(age)
+
+    total = 0
+
+    for age in family_ages:
+        if age <= 3:
+            price = 0
+        elif age <= 12:
+            price = 10
+        else:
+            price = 15
+        total += price
+
+        print('Total cost' + str(total))
+
+group = ['Zalipon', 'Kriril', 'Abdul', 'Nastya']
+allow_age = range(16, 22)
+old_enough = []
+for teen in group:
+    age_str = input("Enter " + teen + "'s age: ")
+    age = int(age_str)
+    if age in allow_age:
+        old_enough.append(teen)
+
+print("The following teenagers are allowed to watch the movie: ")
+for teen in old_enough:
+    print(teen)
+
+# ex10
+sandwich_orders = ["Tuna sandwich", "Avocado sandwich",
+                   "Egg sandwich", "Sabih sandwich", "Pastrami sandwich", "Pastrami sandwich", "Pastrami sandwich"]
+finished_sandwiches = []
+while "Pastrami sandwich" in sandwich_orders:
+    sandwich_orders.remove("Pastrami sandwich")
+print("Making sandwiches...")
+print(
+    "Sorry, your Pastrami sandwich fall on the ground and i will not do this sandwich again")
+while sandwich_orders:
+    sandwich = sandwich_orders.pop(0)
+    print("I made your " + sandwich + ".")
+    finished_sandwiches.append(sandwich)
+
+    print("\nFinished sandwiches:")
+for sandwich in finished_sandwiches:
+    print("- " + sandwich)
