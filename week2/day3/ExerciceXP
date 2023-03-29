@@ -1,0 +1,81 @@
+# ex 1
+keys = ['Ten', 'Twenty', 'Thirty']
+values = [10, 20, 30]
+x_dic = dict(zip(keys, values))
+# print(x_dic)
+# Ex2
+family = {}
+total = 0
+while True:
+    memb = input('Name ')
+    if memb == 'done':
+        break
+    old = input()
+    try:
+        old = int(old)
+        family[memb] = old
+    except ValueError:
+        print("Invalid input format. Please enter a valid age.")
+
+print("Family dictionary:", family)
+
+for name, age in family.items():
+    if age < 3:
+        ticket_price = 0
+    elif age >= 3 and age <= 12:
+        ticket_price = 10
+        total += ticket_price
+    else:
+        ticket_price = 15
+        total += ticket_price
+    print(name, "has to pay $", ticket_price)
+print(total)
+
+# Ex 3
+brand = {
+    'name': 'Zara',
+    'creation_date': 1975,
+    'creator_name': 'Amancio Ortega Gaona',
+    'type_of_clothes': ['men', 'women', 'children', 'home'],
+    'international_competitors': ['Gap', 'H&M', 'Benetton'],
+    'number_stores': 7000,
+    'major_color': {
+        'France': 'blue',
+        'Spain': 'red',
+        'US': ['pink', 'green']
+    }
+}
+brand['number_stores'] = 2
+brand.update({'country_creation': 'Spain'})
+if 'international_competitors' in brand:
+    print('international_competitors in band')
+    brand['international_competitors'].append('Desigual')
+    del brand['creation_date']
+print(brand)
+last_elem = brand['international_competitors'][-1]
+print(last_elem)
+majo_us = brand['major_color']['US']
+print(majo_us)
+lengt = len(brand)
+print(lengt)
+for key in brand:
+    print(key)
+more_on_zar = {'creation_date': 1975, 'number_stores': 10000}
+brand.update(more_on_zar)
+print(brand)
+print(brand['number_stores'])
+# Ex 4
+users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
+heb_dict = {}
+disney_users_A = {}
+disney_users_C = {}
+for i, user in enumerate(users):
+    if 'l' in user and user[0] == 'M' or user[0] == 'P':
+        disney_users_A[user] = i
+print(disney_users_A)
+for i, char in enumerate(users):
+    heb_dict[i] = char
+print(heb_dict)
+for i, user in enumerate(sorted(users)):
+    disney_users_C[user] = i
+print(disney_users_C)

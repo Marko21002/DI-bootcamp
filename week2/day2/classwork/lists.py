@@ -1,1 +1,3 @@
-li = [1, 2, 3, 'a', True]
+word = "HELLo"
+word_list = [char for char in word]
+print(word_list)
