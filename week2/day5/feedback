@@ -21,3 +21,22 @@ which would mean the game is not yet over.
 
 By implementing a game loop, your code will be more concise and efficient.
 Let me know if you have any questions or need further assistance.
+
+for the daily challenge:
+
+the code has a syntax error on the line where it tries to sort the list. 
+The keyword sorted is a built-in function in Python and it should not be used as a variable name. 
+By doing this, the code is overwriting the sorted() function and causing an error.
+
+To fix the error, you can simply change the variable name from sorted to something else. Here's the corrected code:
+
+
+x = input()
+x1 = input()
+x2 = input()
+x3 = input()
+x4 = input()
+x_list = [x, x1, x2, x3, x4]
+print(x_list)
+sorted_list = ','.join([word for word in sorted(x_list)])
+print(sorted_list)
