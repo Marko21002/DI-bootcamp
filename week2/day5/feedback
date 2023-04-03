@@ -1,0 +1,23 @@
+I noticed that in your Tic-Tac-Toe code, you called the same functions repeatedly, resulting in redundant code and a less efficient program.
+To improve your code, I suggest using a game loop that continuously asks for player input
+until there is a win condition or the game ends in a tie.
+
+Here's an example of how the game loop could be implemented:
+
+while True:
+    draw_board(board)
+    player_input(board)
+    check_win(board)
+    player_input2(board)
+    check_win(board)
+    if len([x for x in board if isinstance(x, int)]) == 0:
+        print("It's a tie!")
+        sys.exit()
+
+
+This loop will continue running until one of the win conditions is met, or the game ends in a tie.
+The len([x for x in board if isinstance(x, int)]) expression checks if there are any numbers left in the board list,
+which would mean the game is not yet over.
+
+By implementing a game loop, your code will be more concise and efficient.
+Let me know if you have any questions or need further assistance.
