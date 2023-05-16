@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Homepage - All GIFs</title>
+    </head>
+    <body>
+      <h1>All GIFs</h1>
+      <div>
+        {% for gif in gifs %}
+        <img src="{{ gif.url }}" alt="{{ gif.name }}" />
+        {% endfor %}
+      </div>
+    </body>
+  </html>
+</html>

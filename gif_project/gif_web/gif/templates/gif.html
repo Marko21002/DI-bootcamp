@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals</title>
+  </head>
+  <body>
+    {% extends 'base.html' %} {% block content %}
+    <h1>{{ gif.title }}</h1>
+    <img src="{{ gif.url }}" alt="{{ gif.title }}" />
+    <p>Uploader: {{ gif.uploader_name }}</p>
+    <p>Categories:</p>
+    <ul>
+      {% for category in gif.categories.all %}
+      <li>
+        <a href="{% url 'gifs:category' category.id %}">{{ category.name }}</a>
+      </li>
+      {% empty %}
+      <p>No categories found.</p>
+      {% endfor %}
+    </ul>
+    {% endblock %}
+  </body>
+</html>
