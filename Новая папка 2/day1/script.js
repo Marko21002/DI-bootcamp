@@ -123,7 +123,7 @@ for (let i = 0; i < sortedNames.length; i++) {
 
 console.log("The name of their secret society:", societyName);
 
-
+//daily stars
 const rows = 6;
 let field = '';
 
