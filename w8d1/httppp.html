@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+  <script>
+    function sendData() {
+      // Retrieve data from the inputs
+      var name = document.getElementById("name").value;
+      var lastName = document.getElementById("last-name").value;
+
+      // Create a JavaScript object with the retrieved data
+      var data = {
+        name: name,
+        lastName: lastName
+      };
+
+      // Convert the JavaScript object to a JSON string
+      var jsonString = JSON.stringify(data);
+
+      // Append the JSON string to the DOM
+      var output = document.getElementById("output");
+      output.textContent = jsonString;
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" name="last-name" required><br><br>
+
+    <input type="button" value="Send" onclick="sendData()">
+  </form>
+
+  <div id="output"></div>
+</body>
+</html>
