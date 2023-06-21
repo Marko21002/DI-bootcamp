@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auth flow</title>
+  </head>
+  <body>
+    <form
+      method="post"
+      id="login"
+      onsubmit="event.preventDefault(); handleLogin(event)"
+    >
+      <input required type="text" placeholder="username" name="username" />
+      <input required type="password" placeholder="password" name="password" />
+      <button type="submit">Login</button>
+    </form>
+    <form
+      method="post"
+      id="signup"
+      onsubmit="event.preventDefault(); handleSignup(event)"
+    >
+      <input required type="text" placeholder="username" name="username" />
+      <input required type="email" placeholder="email" name="email" />
+      <input required type="password" placeholder="password" name="password" /> 
+      <button type="submit">Sign up</button>
+    </form>
+  </body>
+  <script>
+    const login = document.getElementById("login");
+    const signup = document.getElementById("signup");
+
+    <!-- login.style.display = "none"; -->
+
+    const handleLogin = async (e) => {
+      const res = await fetch("/login",{
+        method:"POST",
+        body: JSON.stringify({
+          username: event.target.username.value,
+          password: event.target.password.value,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+      login.style.display = "none";
+      signup.style.display = "block";
+    };
+
+    const handleSignup = async (e) => {
+      const res = await fetch("/register", {
+        method: "POST",
+        body: JSON.stringify({
+          email: event.target.email.value,
+          username: event.target.username.value,
+          password: event.target.password.value,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      });
+      login.style.display = "block";
+      signup.style.display = "none";
+    };
+  </script>
+</html>
